@@ -1,0 +1,34 @@
+<idea-plugin>
+    <!-- Unique identifier of the plugin -->
+    <id>com.example.TaskManagerPlugin</id>
+
+    <!-- Public plugin name -->
+    <name>TaskManagerPlugin</name>
+
+    <!-- Vendor information -->
+    <vendor email="dshumilin03@yandex.ru" url="https://www.itmo.ru">ITMO</vendor>
+
+    <!-- Plugin description -->
+    <description><![CDATA[
+    Task Manager Plugin for managing tasks.<br>
+    <em>Use this plugin to manage your tasks</em>
+    ]]></description>
+
+    <!-- Actions -->
+    <actions>
+        <action id="TaskManagerAction" class="com.example.taskmanagerplugin.TaskManagerAction"
+                text="Tasks" description="Open Task Manager">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <!-- Product and plugin compatibility -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Tool Window Registration -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="TaskManager"
+                    anchor="left"
+                    factoryClass="com.example.taskmanagerplugin.TaskManagerToolWindowFactory"/>
+    </extensions>
+</idea-plugin>
